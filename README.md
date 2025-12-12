@@ -25,8 +25,7 @@ Download the [`StructuredJSON.lua`](StructuredJSON.lua) extension file and move 
 
 ```json
 {
-  "exportDate": "2025-12-12",
-  "exportTime": "12:00:00",
+  "exportDate": 1765564698
   "accounts": [
     {
       "name": "Checking Account",
