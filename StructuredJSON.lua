@@ -177,10 +177,9 @@ end
 
 ---@class ExportDataFile
 ---@field accounts table<string, Account>
----@field exportDate string?
----@field exportTime string?
+---@field exportDate integer?
 ---@field new fun(self:ExportDataFile):ExportDataFile
----@field setExportDateTime fun(self:ExportDataFile, dateStr:string, timeStr:string):nil
+---@field setExportDate fun(self:ExportDataFile, date:integer):nil
 ---@field getOrCreateAccount fun(self:ExportDataFile, mmAccount:MMAccount):Account
 ---@field addTransaction fun(self:ExportDataFile, mmAccount:MMAccount, mmTransaction:MMTransaction):nil
 ---@field getAllAccounts fun(self:ExportDataFile):Account[]
@@ -192,18 +191,15 @@ ExportDataFile.__index = ExportDataFile
 function ExportDataFile:new()
     local storage = {
         accounts   = {},
-        exportDate = nil,
-        exportTime = nil
+        exportDate = nil
     }
     setmetatable(storage, ExportDataFile)
     return storage
 end
 
----@param dateStr string
----@param timeStr string
-function ExportDataFile:setExportDateTime(dateStr, timeStr)
-    self.exportDate = dateStr
-    self.exportTime = timeStr
+---@param date integer
+function ExportDataFile:setExportDate(date)
+    self.exportDate = date
 end
 
 ---@param mmAccount MMAccount
@@ -237,7 +233,6 @@ end
 function ExportDataFile:serializeJSON()
     local out = {
         exportDate = self.exportDate,
-        exportTime = self.exportTime,
         accounts   = {}
     }
 
@@ -335,12 +330,10 @@ local exportFile = ExportDataFile:new()
 ---@param endDate integer POSIX time stamp
 ---@param transactionCount integer total number of exporting transactions
 function WriteHeader(account, startDate, endDate, transactionCount)
-    local date = os.date("%Y-%m-%d")
-    local time = os.date("%H:%M:%S")
+    ---@diagnostic disable-next-line: param-type-mismatch
+    local date = os.time(os.date("!*t"))
 
-    ---@cast date string
-    ---@cast time string
-    exportFile:setExportDateTime(date, time)
+    exportFile:setExportDate(date)
 end
 
 ---@param account MMAccount
