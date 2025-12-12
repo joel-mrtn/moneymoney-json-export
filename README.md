@@ -41,3 +41,7 @@ When selecting `Export Transactions…` from the menu, select the `Structured JS
   ]
 }
 ```
+
+## License
+
+[MIT License](LICENSE) - free to use, modify, and distribute.
