@@ -8,13 +8,15 @@ Download the [`StructuredJSON.lua`](StructuredJSON.lua) extension file and move 
 
 ## Usage
 
-When selecting `Export Transactions…` from the menu, select the `Structured JSON (.json)` format. You can use AppleScript as well by specifying `json` as export format. Make sure this is the only JSON export extension installed to avoid conflicts with other JSON exporters. An example of exporting the transactions for all active accounts is shown below.
+- When selecting `Export Transactions…` from the menu, select the `Structured JSON (.json)` format.
 
-```applescript
-tell application "MoneyMoney"
-    export transactions from date "2024-01-01" to date "2024-12-31" as "json"
-end tell
-```
+- You can use AppleScript as well by specifying `json` as export format. Make sure this is the only JSON export extension installed to avoid conflicts with other JSON exporters. An example of exporting the transactions for all active accounts is shown below.
+
+    ```applescript
+    tell application "MoneyMoney"
+        export transactions from date "2024-01-01" to date "2024-12-31" as "json"
+    end tell
+    ```
 
 ## Example
 
