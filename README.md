@@ -1,10 +1,10 @@
 # Structured JSON export for MoneyMoney
 
-A MoneyMoney extension that exports all accounts and transactions into a structured JSON format, preserving the full account hierarchy, transaction details, and metadata.
+A [MoneyMoney](https://moneymoney.app) extension that exports all accounts and transactions into a structured JSON format, preserving the full account hierarchy, transaction details, and metadata.
 
 ## Installation
 
-Download the `Structured JSON.lua` extension file and move it into MoneyMoney's extensions folder. You can easily open MoneyMoney's database folder by selecting `Help → Show Database in Finder` from the menu bar and easily navigate back to the extensions folder.
+Download the [`StructuredJSON.lua`](StructuredJSON.lua) extension file and move it into MoneyMoney's extensions folder. You can easily open MoneyMoney's database folder by selecting `Help → Show Database in Finder` from the menu bar and easily navigate back to the extensions folder.
 
 ## Usage
 
