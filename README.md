@@ -1,4 +1,4 @@
-# Structured JSON export for MoneyMoney
+# Structured JSON Export for MoneyMoney
 
 A [MoneyMoney](https://moneymoney.app) extension that exports all accounts and transactions into a structured JSON format, preserving the full account hierarchy, transaction details, and metadata.
 
